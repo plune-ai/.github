@@ -35,7 +35,7 @@ runner's results to the platform.
 - Commands: `run` · `report` · `diff` · `init` · `login` · `logout` · `sync` · `ingest`, plus `run start` / `finish` / `exec` / `report` / `import` / `delete` for platform runs.
 - `@plune-ai/playwright` is a Playwright reporter that sends results as the run goes — several shards into one run, no file in between.
 - `eval-action` wraps the CLI: on every PR it runs your evals, diffs against the base branch, and leaves one sticky comment — optionally blocking merge on a pass→fail regression.
-- `@plune-ai/cli` **0.11.1** · `@plune-ai/playwright` **0.2.4** · `eval-action` **v1.4.0** · MIT
+- `@plune-ai/cli` **0.12.0** · `@plune-ai/playwright` **0.2.5** · `eval-action` **v1.5.0** · MIT
 
 ### 🗂 Plune platform — cases, runs, review queue
 
