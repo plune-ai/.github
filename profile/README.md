@@ -21,9 +21,10 @@ An autonomous QA agent that explores your app and leaves a trail of tests.
 
 - Logs in with a saved Playwright session, explores each page (ARIA snapshot + screenshot), and verifies every locator before trusting it.
 - Writes methodology-grade test cases (ISO/IEC/IEEE 29119-4), then generates POM-style `@playwright/test`.
-- Self-validates, self-repairs (keep-best), and self-improves via Langfuse — optional, so it runs fully offline.
-- Modes `design` · `automate` · `explore`; interactive TUI. Surfaces today: UI. Next: API, unit, docs.
-- `@plune-ai/cairn` **0.7.0** · Apache-2.0 · TypeScript · Node 20+
+- Self-validates, self-repairs (keep-best), and learns across runs — Langfuse tracing is optional.
+- Modes `design` · `automate` · `explore` · `api`; interactive TUI. Surfaces today: UI and API (OpenAPI). Next: unit, docs.
+- An optional decision layer: a small System One model (TypeSafe Jev in the cloud, or Laya on your machine) triages failing tests, scores checklist coverage and heals broken locators. It is off by default, with a shadow mode to judge it first.
+- `@plune-ai/cairn` **0.8.0** · Apache-2.0 · TypeScript · Node 20+
 
 ### ✅ Plune CLI + Action — evals and reporting
 
@@ -62,4 +63,4 @@ you hear back about the decision.
 
 Building from Ukraine 🇺🇦
 
-*Versions above are as of 2026-09-14; [docs.plune.ai](https://docs.plune.ai) shows the current ones.*
+*Versions above are as of 2026-09-24; [docs.plune.ai](https://docs.plune.ai) shows the current ones.*
