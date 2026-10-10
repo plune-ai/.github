@@ -1,66 +1,13 @@
-# Plune
+<p align="center">
+  <img src="assets/banner.png" alt="Plune — proof for AI products" width="100%">
+</p>
 
-> **Proof for AI products.** AI quality, verified.
+**Proof for AI products.** Open-source tools and a platform for teams shipping with LLMs.
+Nothing enters your test suite silently.
 
-Plune is quality infrastructure for teams shipping with LLMs — test generation, evals with
-regression gates in CI, and a platform that keeps the cases, the runs and the review queue where a
-human decides what enters the suite. **Nothing enters your test suite silently** — that is the one
-rule everything below is built around.
+- 🧭 **[Cairn](https://github.com/plune-ai/cairn)** — an AI agent that explores your app and writes Playwright tests, UI and API.
+- ✅ **[Plune CLI](https://github.com/plune-ai/cli)** — evals for LLM output in one `plune.yaml`, locally or in CI; it also imports JUnit and Playwright results into the platform.
+- 🚦 **[eval-action](https://github.com/plune-ai/eval-action)** — runs your evals on every pull request and comments the regression diff.
+- 🗂 **Platform** — cases, runs and the review queue in one place. In beta at [beta.plune.ai](https://beta.plune.ai).
 
-**Early, but real** — on npm, on the Marketplace, and running in CI every day on our own repositories.
-The tools are open source; the platform is in an **invite-only beta**.
-
-## Three layers
-
-**Cairn generates** tests. **The CLI and the Action evaluate** LLM behaviour and report results.
-**The platform keeps the history** and holds the queue. Use any one of them, or all three.
-
-### 🧭 Cairn — test generation
-
-An autonomous QA agent that explores your app and leaves a trail of tests.
-
-- Logs in with a saved Playwright session, explores each page (ARIA snapshot + screenshot), and verifies every locator before trusting it.
-- Writes methodology-grade test cases (ISO/IEC/IEEE 29119-4), then generates POM-style `@playwright/test`.
-- Self-validates, self-repairs (keep-best), and learns across runs — Langfuse tracing is optional.
-- Modes `design` · `automate` · `explore` · `api`; interactive TUI. Surfaces today: UI and API (OpenAPI). Next: unit, docs.
-- An optional decision layer: a small System One model (TypeSafe Jev in the cloud, or Laya on your machine) triages failing tests, scores checklist coverage and heals broken locators. It is off by default, with a shadow mode to judge it first.
-- `@plune-ai/cairn` **0.8.0** · Apache-2.0 · TypeScript · Node 20+
-
-### ✅ Plune CLI + Action — evals and reporting
-
-Assertion-testing for LLM behaviour, with regression gates in CI — and the reporter that sends any
-runner's results to the platform.
-
-- `@plune-ai/cli` runs an assertion suite against your provider (Anthropic · OpenAI · OpenRouter) and returns a pass/fail report — locally, in CI, or as a regression diff between runs. 10 assertion types, from exact-match and `json-schema` to `llm-judge` and RAG metrics.
-- The same CLI reports to the platform: `plune run import` turns a **JUnit XML** or Playwright JSON report from any runner into a run — no provider key needed; `plune ingest` sends a Cairn run; `plune sync` uploads an eval run.
-- Commands: `run` · `report` · `diff` · `init` · `login` · `logout` · `sync` · `ingest`, plus `run start` / `finish` / `exec` / `report` / `import` / `delete` for platform runs.
-- `@plune-ai/playwright` is a Playwright reporter that sends results as the run goes — several shards into one run, no file in between.
-- `eval-action` wraps the CLI: on every PR it runs your evals, diffs against the base branch, and leaves one sticky comment — optionally blocking merge on a pass→fail regression.
-- `@plune-ai/cli` **0.17.0** · `@plune-ai/playwright` **0.5.0** · `eval-action` **v1.7.6** · MIT
-
-### 🗂 Plune platform — cases, runs, review queue
-
-The hosted half: test cases with a history, every run recorded, and the queue where machine-proposed
-tests wait for a person. Cases are organised as a tree that mirrors your repository; a runner's
-discovered tests can be trusted to become cases on arrival, or held for review.
-
-- **Invite-only beta** at [beta.plune.ai](https://beta.plune.ai) — [join the waitlist](https://plune.ai/platform#waitlist).
-- Documentation: [docs.plune.ai/platform](https://docs.plune.ai/platform/getting-started/) — getting started, concepts, and an API reference generated from the server itself.
-
-## Repositories
-
-- **[cairn](https://github.com/plune-ai/cairn)** — autonomous agent that explores your app and generates Playwright tests.
-- **[cli](https://github.com/plune-ai/cli)** — the CLI (`@plune-ai/cli`) and the Playwright reporter (`@plune-ai/playwright`).
-- **[eval-action](https://github.com/plune-ai/eval-action)** — GitHub Action that runs Plune evals and gates PRs.
-
-The platform and the site live in private repositories for now.
-
-## Get in touch
-
-Building — or testing — AI products? Say hello: [hello@plune.ai](mailto:hello@plune.ai).
-That address is also the beta's channel: a report sent there becomes a row in the punch-list, and
-you hear back about the decision.
-
-Building from Ukraine 🇺🇦
-
-*Versions above are as of 2026-09-28; [docs.plune.ai](https://docs.plune.ai) shows the current ones.*
+[plune.ai](https://plune.ai) · [Docs](https://docs.plune.ai) · [hello@plune.ai](mailto:hello@plune.ai) · Building from Ukraine 🇺🇦
